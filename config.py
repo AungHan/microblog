@@ -2,7 +2,7 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-class Config():
+class Config:
     # for security (csrf etc)
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     
