@@ -11,7 +11,6 @@ from werkzeug.urls import url_parse
 @app.route('/index')
 @login_required
 def index():
-    
     posts = [
         {
             'author': {'username': 'John'},
@@ -32,9 +31,7 @@ def login():
     # if there is active current user
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-
     form = LoginForm()
-
     # received form submit
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
